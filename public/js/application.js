@@ -18,7 +18,7 @@ $(document).ready(function() {
 
   });
 
-  $('#add_question').on('submit', function(evt){
+  $('.add_question').on('submit', function(evt){
     evt.preventDefault();
     var question_data = $(this).serialize();
     var next_question = $.ajax({
