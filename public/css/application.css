@@ -7,3 +7,18 @@
 th {
   text-align: left;
 }
+
+#login {
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+  border-right: 1px solid gray;
+  margin: 2%;
+}
+
+#create_account {
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 2%;
+}
