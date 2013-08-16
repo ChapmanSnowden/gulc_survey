@@ -15,8 +15,7 @@ get '/surveys/new' do
 end
 
 post '/surveys' do
-  session[:id] = 1 #delete later
-  user = User.find(session[:id])
+  user = User.find(session[:user_id])
   @survey = Survey.create(user: user, name: params[:name])
   @id = @survey.id
 
