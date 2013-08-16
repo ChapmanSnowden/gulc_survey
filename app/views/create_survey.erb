@@ -4,12 +4,8 @@
 
 <!--   <button>Create Survey!</button> -->
 
-  <form id="create_survey" action="/surveys" method="post">
-    <p> Survey Name: <input name="name" type="text"></p>
-    <p>Question: <input name ="prompt" type="text"></p>
-    <p>Choice 1: <input name ="choice_1" type="text"></p>
-    <p>Choice 2: <input name ="choice_2" type="text"></p>
-    <p>Choice 3: <input name ="choice_3" type="text"></p>
-    <p><input type="submit" value="Add Question"></p>
+  <form id="create_survey" name="create_survey" action="/surveys" method="post">
+    <div> Survey Name: <input name="name" type="text"></div>
+    <div><input id="save_survey" type="submit" value="Create Survey"></div>
   </form>
 </div>
