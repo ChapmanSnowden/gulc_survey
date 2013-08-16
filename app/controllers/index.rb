@@ -27,4 +27,14 @@ post '/surveys/:id/questions/new' do |id|
   @id = @survey.id
   
   erb :_new_question
+  erb :index
+end
+
+get '/dashboard' do
+  erb :dashboard
+end
+
+post '/surveys' do
+  p params[:name]
+  p params[:prompt]
 end
