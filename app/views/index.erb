@@ -1,13 +1,27 @@
 <div class="container">
-  <h1>Deaf Grandma</h1>
-  <% if @grandma %>
-    <p>Grandma says: "<span id="grandma_says"><%= @grandma %></span>"</p>
-  <% end %>
 
-  <form action="/grandma" method="post">
-    Say something to Grandma:
-    <br>
-    <input type="text" name="user_input">
-    <input type="submit" value="Say it!">
-  </form>
+  <h1> Welcome to GULC </h1>
+
+    <div id="login">
+      <h3>Login</h3>
+      <form action="/login" method="post">
+        <label for="email">Email</label><input type="text" name="email" /><br>
+        <label for="password">Password</label><input type="text" name="password" /><br><br>
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+
+  <div id="create_account">
+    <h3>Sign up</h3>
+    <form id="create_form" action="/create" method="post">
+      <label for="name">Name</label><input class='name' type="text" name="name" /><br>
+      <label for="email">Email</label><input class="email" type="text" name="email" /><br>
+      <label for="password">Password</label><input type="text" name="password" /><br><br>
+      <input type="submit" value="Create Account" />
+    </form>
+  </div>
+    
+  <div><ul id="errors"></ul></div>
+
 </div>
+

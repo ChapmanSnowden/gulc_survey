@@ -1,5 +1,4 @@
 get '/' do
-  
   erb :index
 end
 
@@ -29,3 +28,4 @@ post '/surveys/:id/questions/new' do |id|
   
   erb :_new_question
 end
+
