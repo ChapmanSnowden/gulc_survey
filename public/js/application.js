@@ -36,10 +36,6 @@ $(document).ready(function() {
 
   });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> dynamic forms using ajax w/o end button
   $('#create_survey').on('submit', function(evt){
     evt.preventDefault();
     var survey_name = $(this).serialize();
@@ -55,11 +51,8 @@ $(document).ready(function() {
 
   });
 
-<<<<<<< HEAD
+
   $('.add_question').on('submit', function(evt){
-=======
-  $('#add_question').on('submit', function(evt){
->>>>>>> dynamic forms using ajax w/o end button
     evt.preventDefault();
     var question_data = $(this).serialize();
     var next_question = $.ajax({
