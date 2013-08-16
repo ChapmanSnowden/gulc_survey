@@ -34,6 +34,10 @@ get '/dashboard' do
   erb :dashboard
 end
 
+get '/surveys/new' do
+  erb :create_survey
+end
+
 post '/surveys' do
   session[:id] = 1
   user = User.find(session[:id])
@@ -43,6 +47,6 @@ post '/surveys' do
   question.choices.create(content: params[:choice_2])
   question.choices.create(content: params[:choice_3])
 
-  redirect '/dashboard'
+  redirect '/surveys/new'
   
 end
