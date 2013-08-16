@@ -7,6 +7,14 @@ get '/dashboard' do
 end
 
 post '/surveys' do
-  p params[:name]
-  p params[:prompt]
+  session[:id] = 1
+  user = User.find(session[:id])
+  @survey = Survey.create(user: user, name: params[:name])
+  question = @survey.questions.create(prompt: params[:prompt])
+  question.choices.create(content: params[:choice_1])
+  question.choices.create(content: params[:choice_2])
+  question.choices.create(content: params[:choice_3])
+
+  redirect '/dashboard'
+  
 end
