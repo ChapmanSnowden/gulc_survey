@@ -2,10 +2,6 @@ get '/' do
   erb :index
 end
 
-  
-  erb :index
-end
-
 get '/dashboard' do
   erb :dashboard
 end
@@ -32,3 +28,4 @@ post '/surveys/:id/questions/new' do |id|
   
   erb :_new_question
 end
+
