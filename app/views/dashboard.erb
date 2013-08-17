@@ -5,8 +5,10 @@
   <a href="/surveys/new">Create New Survey</a>
 
   <h3>Surveys You Created</h3>
-    <% @user.surveys.each do |survey| %>
-      <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
+    <% if @user.surveys %>
+      <% @user.surveys.each do |survey| %>
+        <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
+      <% end %>
     <% end %>
 
   <h3>Surveys You Can Take</h3>

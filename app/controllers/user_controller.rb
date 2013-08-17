@@ -1,7 +1,9 @@
 post '/create' do
-  user = User.new(name: params[:name], email: params[:email])
-  user.password = params[:password]
-  user.save!
+  @user = User.new(name: params[:name], email: params[:email])
+  @user.password = params[:password]
+  @user.save!
+
+  session[:user_id] = @user.id
 
   @all_surveys = Survey.all
 
