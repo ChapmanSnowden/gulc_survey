@@ -3,11 +3,17 @@ get '/' do
 end
 
 get '/dashboard' do
+  @all_surveys = Survey.all
   erb :dashboard
 end
 
 get '/surveys/new' do
   erb :create_survey
+end
+
+get '/surveys/:id' do
+  @survey = Survey.find(params[:id])
+  erb :show_survey
 end
 
 post '/surveys' do
@@ -28,4 +34,11 @@ post '/surveys/:id/questions/new' do |id|
   
   erb :_new_question
 end
+
+# post '/answers' do
+#   params.each do |answer|
+#     Answer.create()
+#   end
+
+# end
   

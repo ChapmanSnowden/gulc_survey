@@ -2,5 +2,11 @@
 
 <a href="/surveys/new">Create New Survey</a>
 
+<h3>Existing Surveys</h3>
+<div>
+  <% @all_surveys.each do |survey| %>
+    <a href="/surveys/<%=survey.id%>"><%= survey.name %></a>
+  <% end %>
+</div>
 
 
