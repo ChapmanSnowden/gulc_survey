@@ -10,6 +10,7 @@ $(document).ready(function() {
     });
 
     survey_creation.done(function(response) {
+      $('#save_survey').hide();
       $('.container').append(response);
     });
   });
@@ -24,6 +25,7 @@ $(document).ready(function() {
     });
 
     question_creation.done(function(response) {
+      $('.add_q').hide();
       $('.container').append(response);
     });
   });
@@ -38,8 +40,8 @@ $(document).ready(function() {
     });
 
     choice_creation.done(function(response) {
-      $('.another_q').remove();
-      $('.another_choice').remove();
+      $('.q_button').remove();
+      $('.add_c').hide();
       $('.container').append(response);
     });
   });
@@ -53,6 +55,8 @@ $(document).ready(function() {
     });
 
     anotherQ.done(function(response) {
+      $('.add_c').remove();
+      $('.another_q').remove();
       $('.container').append(response);
     });
   });
