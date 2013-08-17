@@ -3,6 +3,7 @@
   width: 600px;
   padding: 30px 20px 20px 20px;
   border: 1px dotted black;
+  position: relative;
 }
 th {
   text-align: left;*/
@@ -31,6 +32,12 @@ th {
   display: inline-block;
   vertical-align: top;
   margin: 2%;
+}
+
+#done {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .container h1 {
