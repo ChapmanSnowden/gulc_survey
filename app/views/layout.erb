@@ -10,6 +10,7 @@
   <!--
     application.css is where you put your styles
   -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -19,9 +20,11 @@
   <title></title>
 </head>
 <body>
-
+   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
 <!-- Conditional Navbar -->
+  
   <div class="navbar navbar-fixed-top">
+    
     <a class="navbar-brand " href="/" style="margin-left:55px;">Questify!</a>
     <div style="margin-right:65px;">
     <% if @user.nil? %>

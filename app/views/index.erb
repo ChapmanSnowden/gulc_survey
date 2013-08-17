@@ -1,17 +1,38 @@
 <div class="container">
 
-  <h1> Welcome to GULC </h1>
+  <h1> Welcome to ?uestify </h1>
 
-    <div id="login">
-      <h3>Login</h3>
+  <!--    <div id="login"> -->
+  <div class="jumbotron">
+      <!-- <h3>Login</h3>
       <form action="/login" method="post">
         <label for="email">Email</label><input type="text" name="email" /><br>
         <label for="password">Password</label><input type="password" name="password" /><br><br>
         <input type="submit" value="Login" />
-      </form>
-    </div>
+      </form> -->
 
-  <div id="create_account">
+      <form role="form" action="/create" method="post" >
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" name="name" placeholder="e.g. Bob Hope">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="name" placeholder="e.g. Bob@hope.com">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+
+
+        <button type="submit" class="btn btn-default">Create Account</button>
+      </form>
+
+
+ <!--  <div id="create_account">
     <h3>Sign up</h3>
     <form id="create_form" action="/create" method="post">
       <label for="name">Name</label><input class='name' type="text" name="name" /><br>
@@ -19,9 +40,10 @@
       <label for="password">Password</label><input type="password" name="password" /><br><br>
       <input type="submit" value="Create Account" />
     </form>
+  </div> -->
+
+    <div><ul id="errors"></ul></div>
   </div>
-    
-  <div><ul id="errors"></ul></div>
 
 </div>
 
