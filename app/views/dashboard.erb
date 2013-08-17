@@ -2,17 +2,30 @@
 
   <h1>Dashboard</h1>
 
-  <a href="/surveys/new">Create New Survey</a>
+  
+  <div>
+    <h3>?uests for the Crowd</h3>
+      <% if @user.surveys %>
+        <% @user.surveys.each do |survey| %>
+          <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
+        <% end %>
+      <% end %>
+      <a href="/surveys/new">Create New Survey</a>
+  </div>
 
-  <h3>Surveys You Created</h3>
-    <% if @user.surveys %>
-      <% @user.surveys.each do |survey| %>
-        <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
+  <div>
+  <h3>?uests You've Answered</h3>
+    <% if @user.completed_surveys %>
+      <% @user.completed_surveys.each do |survey| %>
+         <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
       <% end %>
     <% end %>
+  </div>
 
-  <h3>Surveys You Can Take</h3>
+
   <div>
+  <h3>?uests You Can Answer</h3>
+  
     <% @all_surveys.each do |survey| %>
       <% unless survey.user_id == @user.id %>
         <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
