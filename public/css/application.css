@@ -16,6 +16,16 @@ th {
   margin: 2%;
 }
 
+.navbar-brand {
+  color: white;
+  font-size: 30px;
+  font-style: bold;
+}
+
+.navbar {
+  background-color: black;
+}
+
 #create_account {
   width: 40%;
   display: inline-block;
@@ -30,7 +40,19 @@ th {
 .jumbotron {
   width: 550px;
   margin: 0 auto;
+  background-color: transparent;
+  opacity: 0.8;
 }
+
+.jumbotron form {
+  margin-top: -30px;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
 
 
 /*
@@ -46,8 +68,9 @@ th {
 body {
   position: relative; /* For scrollyspy */
   padding-top: 50px; /* Account for fixed navbar */
+  background-image:url('../images/concert_background_image.jpg');
 }
-
+  
 /* Custom docs button */
 .btn-bs {
   color: #563d7c;
