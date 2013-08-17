@@ -37,10 +37,11 @@ post '/surveys/:id/questions/new' do |id|
 end
 
 post '/answers' do
-  p params
-  # params.each do |answer|
-  #   # Answer.create()
-  # end
+  params.each_value do |answer|
+    Answer.create(choice_id: answer, user_id: session[:user_id])
+  end
+
+  redirect '/dashboard'
 
 end
   
