@@ -4,7 +4,7 @@ post '/create' do
   user.password = params[:password]
   user.save!
 
-  redirect '/' ##bug
+  erb :dashboard
 end
 
 post '/login' do
