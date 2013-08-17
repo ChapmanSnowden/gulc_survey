@@ -4,6 +4,7 @@ end
 
 get '/dashboard' do
   @all_surveys = Survey.all
+  @user = User.find(session[:user_id])
   erb :dashboard
 end
 
@@ -35,10 +36,11 @@ post '/surveys/:id/questions/new' do |id|
   erb :_new_question
 end
 
-# post '/answers' do
-#   params.each do |answer|
-#     # Answer.create()
-#   end
+post '/answers' do
+  p params
+  # params.each do |answer|
+  #   # Answer.create()
+  # end
 
-# end
+end
   

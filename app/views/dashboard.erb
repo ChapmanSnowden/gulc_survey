@@ -1,12 +1,21 @@
-<h1>Dashboard</h1>
+<div class="container">
 
-<a href="/surveys/new">Create New Survey</a>
+  <h1>Dashboard</h1>
 
-<h3>Existing Surveys</h3>
-<div>
-  <% @all_surveys.each do |survey| %>
-    <a href="/surveys/<%=survey.id%>"><%= survey.name %></a>
-  <% end %>
+  <a href="/surveys/new">Create New Survey</a>
+
+  <h3>Surveys You Created</h3>
+    <% @user.surveys.each do |survey| %>
+      <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
+    <% end %>
+
+  <h3>Surveys You Can Take</h3>
+  <div>
+    <% @all_surveys.each do |survey| %>
+      <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
+    <% end %>
+  </div>
+
 </div>
 
 
