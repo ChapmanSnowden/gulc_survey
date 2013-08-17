@@ -1,0 +1,12 @@
+<form class="add_choice" action="/surveys/<%= @survey_id %>/questions/<%= @question_id %>/choices" method="post">
+
+  <span>Choice: <input name ="choice" type="text"></span>
+  <span class="another_choice"><input id="add_c" type="submit" value="Add Choice"></span>
+
+</form>
+<br>
+
+<form class ="another_q" action="/surveys/<%= @survey_id %>/another_q" method="post">
+  <button class="q_button">Add Another Question</button>
+</form>
+<br>
