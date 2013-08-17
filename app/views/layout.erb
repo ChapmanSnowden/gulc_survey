@@ -19,6 +19,26 @@
   <title></title>
 </head>
 <body>
+
+<!-- Conditional Navbar -->
+  <div class="navbar navbar-fixed-top">
+    <a class="navbar-brand " href="/" style="margin-left:55px;">Questify!</a>
+    <div style="margin-right:65px;">
+    <% if @user.nil? %>
+      <form class="navbar-form pull-right" action="/login" method="post">
+        <input type="text" class="form-control" style="width: 200px;" name="email" placeholder="email"  >
+        <input type="password" class="form-control" style="width: 200px;" name="password" placeholder="password"  >
+        <input type="submit" value="Login"></input>
+      </form>
+    <%else%>
+      <form class="navbar-form pull-right" action="/logout" method="get">
+        <input type="submit" value="Logout"></input>
+      </form>
+    <% end %>
+    </div>
+  </div>
+<!-- Conditional Navbar -->
+
   <%= yield %>
 </body>
 </html>
