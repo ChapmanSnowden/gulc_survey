@@ -1,5 +1,8 @@
-  class User < ActiveRecord::Base
+class User < ActiveRecord::Base
   has_many :surveys
+  has_many :answers
+  has_many :questions, through: :answers
+  has_many :completed_surveys
 
   include BCrypt
   
@@ -20,3 +23,5 @@
   end
 
 end
+
+
