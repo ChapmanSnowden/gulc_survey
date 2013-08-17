@@ -1,3 +1,7 @@
+get '/' do
+  erb :index
+end
+
 post '/create' do
   @user = User.new(name: params[:name], email: params[:email])
   @user.password = params[:password]
