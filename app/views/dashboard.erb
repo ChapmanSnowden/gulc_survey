@@ -17,7 +17,7 @@
    <h3><strong><em>?uest</em></strong> You've Answered</h3>
     <% if @user.completed_surveys %>
       <% @user.completed_surveys.each do |elem| %>
-         <a href="/surveys/<%=elem.survey_id%>"><%= elem.survey.name %></a><br>
+         <a href="/surveys/<%=elem.survey_id%>/results"><%= elem.survey.name %></a><br>
       <% end %>
     <% end %>
   </div>
