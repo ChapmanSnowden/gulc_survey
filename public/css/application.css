@@ -106,6 +106,7 @@ th {
 
 
 
+
 #create_survey {
   margin: 0 auto;
   width: 70%;
@@ -114,6 +115,10 @@ th {
   border-radius: 10px;
   padding: 10px;
   margin-top: 30px;
+}
+
+#results {
+  color: blue;
 }
 
 /*

@@ -8,4 +8,14 @@ post '/answers' do
   redirect '/dashboard'
 end
 
-# SurveyCompleted()
+get '/surveys/:id/results' do |id|
+  if session[:user_id]
+    @survey = Survey.find(id)
+    @num_takers = CompletedSurvey.where(survey_id: id).count
+    @questions = @survey.questions
+
+    erb :results
+  else 
+    redirect '/'
+  end
+end

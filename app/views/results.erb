@@ -1,0 +1,16 @@
+<h1>Survey Results</h1>
+
+<h3><em>Completed by</em> <%=@num_takers%> <em>?uesters</em></h3> 
+
+<ul>
+  <%@questions.each do |question|%>
+    <li><%=question.prompt%></li>
+    <ul>
+      <%question.choices.each do |choice|%>
+        <li><%=choice.content%>: <span id="results"><%=(100 * choice.votes.to_f/@num_takers).round(1)%>%</span></li>
+      <%end%>
+    </ul>
+  <%end%>
+</ul>
+
+
