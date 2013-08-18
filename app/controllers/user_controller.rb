@@ -1,6 +1,7 @@
 get '/' do
   @errors = session.delete(:error_message) || []
-  if session[:user_id]
+  @user = User.find(session[:user_id]
+  if @user
     erb :dashboard
   else
     erb :index
