@@ -1,40 +1,38 @@
-<div class="container" class="row">
+<div class="container">
 
   <h1><strong><em>?uest</em></strong> Dashboard</h1>
 
   
-
-    <div class="col-md-3" class="dash_box">
-      <h3><strong><em>?uest</em></strong> for the Crowd</h3>
-        <% if @user.surveys %>
-          <% @user.surveys.each do |survey| %>
-            <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
-          <% end %>
+  <div class="col-md-3" >
+    <h3><strong><em>?uest</em></strong> for the Crowd</h3>
+      <% if @user.surveys %>
+        <% @user.surveys.each do |survey| %>
+          <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
         <% end %>
-      <button><a href="/surveys/new">Create New Survey</a></button>
-    </div>
+      <% end %>
+      <a href="/surveys/new">Create New Survey</a>
+  </div>
+
+  <div class="col-md-3" >
+   <h3><strong><em>?uest</em></strong> You've Answered</h3>
+    <% if @user.completed_surveys %>
+      <% @user.completed_surveys.each do |elem| %>
+         <a href="/surveys/<%=elem.survey_id%>"><%= elem.survey.name %></a><br>
+      <% end %>
+    <% end %>
+  </div>
 
 
-    <div class="col-md-3"  class="dash_box">
-      <h3><strong><em>?uest</em></strong> You've Answered</h3>
-        <% if @user.completed_surveys %>
-          <% @user.completed_surveys.each do |survey| %>
-             <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
-          <% end %>
-        <% end %>
-    </div>
+  <div class="col-md-3" >
+   <h3><strong><em>?uest</em></strong> You Can Answer</h3>
+  
+    <% @all_surveys.each do |survey| %>
+      <% unless survey.user_id == @user.id %>
+        <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
+      <% end %>
+    <% end %>
+  </div>
 
-
-
-    <div class="col-md-3" class="dash_box">
-      <h3><strong><em>?uest</em></strong> You Can Answer</h3>
-      
-        <% @all_surveys.each do |survey| %>
-          <% unless survey.user_id == @user.id %>
-            <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
-          <% end %>
-        <% end %>
-    </div>
 
 </div>
 

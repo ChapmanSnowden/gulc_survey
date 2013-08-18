@@ -1,20 +1,13 @@
 $(document).ready(function() {
 
-$('#create_form').on('submit', function(event) {
-    
+$('.jumbotron form').on('submit', function(event) {
+    console.log('hi');
     $('#errors li').remove();
 
      var errors = []
 
-     var email = $('#create_form input[name="email"]').val();
-     var password = $('#create_form input[name="password"]').val();
-     
-    
-    if ((/(.+)@(.+){2,}\.(.+){2,}/).test(email) === false) {
-      $('#errors').append("<li> Must be a valid email </li>");
-      errors.push("Bad email");
-    };
- 
+     var password = $('#exampleInputPassword1').val();
+         
     if ( (/[\d]/).test(password) === false) {
       $('#errors').append("<li> Password must have at least 1 numeric character </li>");
       errors.push("No numbers");
