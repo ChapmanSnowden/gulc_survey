@@ -34,6 +34,12 @@ th {
   margin: 2%;
 }
 
+.col-md-6 {
+  width: 100%;
+  margin-left: 44%;
+  
+}
+
 .col-md-3 {
   width: 30%;
   background-color: white;
@@ -49,9 +55,12 @@ th {
 }
 
 #done {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  margin: 0 auto;
+}
+
+#btn_im_done {
+  margin: 0 auto;
+
 }
 
 .container h1 {
@@ -65,13 +74,23 @@ th {
   opacity: 0.8;
 }
 
+.survey_show {
+  margin: 0 auto;
+  width: 70%;
+  background-color: white;
+  border: 7px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 30px;
+}
+
 .jumbotron form {
   margin-top: -30px;
 }
 
-img{
-  max-width: 100%;
-  height: auto;
+.btn-info a {
+  text-decoration: none;
+  color: white;
 }
 
 #errors li {
@@ -83,6 +102,19 @@ img{
   padding: 10px;
   opacity: 1;
   border-radius: 10px;
+}
+
+
+
+
+#create_survey {
+  margin: 0 auto;
+  width: 70%;
+  background-color: white;
+  border: 7px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 30px;
 }
 
 #results {
