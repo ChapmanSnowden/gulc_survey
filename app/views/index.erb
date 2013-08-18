@@ -19,7 +19,7 @@
 
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" class="form-control" name="name" placeholder="e.g. Bob@hope.com">
+          <input type="email" class="form-control" name="email" placeholder="e.g. Bob@hope.com">
         </div>
 
         <div class="form-group">
@@ -42,7 +42,15 @@
     </form>
   </div> -->
 
-    <div><ul id="errors"></ul></div>
+    <div>    
+      <ul id="errors">
+        <% if @errors %>
+          <% @errors.each do |error| %>
+          <li> <%=error%> </li>
+          <%end%>
+        <%end%>      
+      </ul>
+    </div>
   </div>
 
 </div>
