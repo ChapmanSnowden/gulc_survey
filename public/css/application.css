@@ -50,6 +50,8 @@ th {
 
 }
 
+
+
 .col-md-3 h3 {
   text-decoration: underline;
 }
@@ -59,6 +61,7 @@ th {
 }
 
 #btn_im_done {
+
   margin: 0 auto;
 
 }
@@ -104,7 +107,15 @@ th {
   border-radius: 10px;
 }
 
+/*.add_question {
+  width: 40%;
+  background-color: #4D4543;
+  border: 3px solid gray;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
 
+}*/
 
 
 #create_survey {
@@ -115,6 +126,12 @@ th {
   border-radius: 10px;
   padding: 10px;
   margin-top: 30px;
+}
+
+.question_partial {
+  border: 4px solid gray;
+    border-radius: 10px;
+  width: 40%;
 }
 
 #results {
