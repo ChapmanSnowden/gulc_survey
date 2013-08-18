@@ -34,6 +34,20 @@ th {
   margin: 2%;
 }
 
+.col-md-3 {
+  width: 30%;
+  background-color: white;
+  border: 7px solid gray;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+
+}
+
+.col-md-3 h3 {
+  text-decoration: underline;
+}
+
 #done {
   position: absolute;
   bottom: 0;
