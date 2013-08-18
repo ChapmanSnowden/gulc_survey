@@ -14,10 +14,10 @@
   </div>
 
   <div>
-  <h3>?uests You've Answered</h3>
+    <h3>?uests You've Answered</h3>
     <% if @user.completed_surveys %>
-      <% @user.completed_surveys.each do |survey| %>
-         <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
+      <% @user.completed_surveys.each do |elem| %>
+         <a href="/surveys/<%=elem.survey_id%>"><%= elem.survey.name %></a><br>
       <% end %>
     <% end %>
   </div>
