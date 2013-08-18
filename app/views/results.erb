@@ -8,7 +8,7 @@
     <li class="prompt"><%=question.prompt%></li>
     <ul>
       <%question.choices.each do |choice|%>
-        <% percentage = (100 * choice.votes.to_f/@num_takers).round(1) %> 
+        <% choice.votes == 0 ? percentage = 0 : percentage = (100 * choice.votes.to_f/@num_takers).round(1) %> 
         <% color = '#' + '%06x' % (rand * 0xffffff) %>
         <li><%=choice.content%>:<br> 
         <div id="results" style="background-color: <%= color %>; width: <%=percentage%>%"></div>
