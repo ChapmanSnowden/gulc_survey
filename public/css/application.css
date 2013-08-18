@@ -52,6 +52,28 @@ th {
 
 }
 
+.add_question {
+  margin: 0 auto;
+  width: 50%;
+  background-color: white;
+  opacity: .85;
+  border: 7px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 30px;
+
+}
+
+.add_choice {
+  width: 35%;
+  background-color: white;
+  opacity: .85;
+  border: 7px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 30px;
+}
+
 
 
 .col-md-3 h3 {
@@ -69,7 +91,7 @@ th {
 }
 
 .container h1 {
-  text-align: center;
+  text-align: left;
 }
 
 .jumbotron {
@@ -83,6 +105,7 @@ th {
   margin: 0 auto;
   width: 70%;
   background-color: white;
+  opacity: .85;
   border: 7px solid gray;
   border-radius: 10px;
   padding: 10px;
@@ -147,12 +170,29 @@ th {
 
 #results_container {
   width: 80%;
+  margin: 0 auto;
+  background-color: white;
+  opacity: .85;
+  border: 7px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+#results_container h1 {
+  text-align: center;
+}
+
+#results_container h4 {
+  text-align: center;
 }
 
 .prompt {
   font-weight: bold;
   font-size: 1.2em;
 }
+
+
 
 /*
  * Bootstrap Documentation
