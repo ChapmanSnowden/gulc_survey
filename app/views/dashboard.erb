@@ -5,36 +5,36 @@
   
   <div class="col-md-3" >
     <h3><strong><em>?uest</em></strong> for the Crowd</h3>
-      <% if @user.surveys %>
-        <% @user.surveys.each do |survey| %>
-          <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
-        <% end %>
-      <% end %>
-      <button type="button" class="btn btn-info"><a href="/surveys/new">Create New Survey</a></button>
-      
+    <% if @user.surveys %>
+    <% @user.surveys.each do |survey| %>
+    <a href="/surveys/<%=survey.id%>/results"><%= survey.name %></a><br>
+    <% end %>
+    <% end %>
+    <button type="button" class="btn btn-info"><a href="/surveys/new">Create New Survey</a></button>
+
   </div>
 
   <div class="col-md-3" >
    <h3><strong><em>?uest</em></strong> You've Answered</h3>
-    <% if @user.completed_surveys %>
-      <% @user.completed_surveys.each do |elem| %>
-         <a href="/surveys/<%=elem.survey_id%>/results"><%= elem.survey.name %></a><br>
-      <% end %>
-    <% end %>
-  </div>
+   <% if @user.completed_surveys %>
+   <% @user.completed_surveys.each do |elem| %>
+   <a href="/surveys/<%=elem.survey_id%>/results"><%= elem.survey.name %></a><br>
+   <% end %>
+   <% end %>
+ </div>
 
 
-  <div class="col-md-3" >
+ <div class="col-md-3" >
    <h3><strong><em>?uest</em></strong> You Can Answer</h3>
-  
-   <% if @all_surveys %>
-    <% @all_surveys.each do |survey| %>
-      <% unless survey.user_id == @user.id %>
-        <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
+
+   <% if @unanswered_surveys %>
+    <% @unanswered_surveys.each do |elem| %>
+      <% unless elem.user_id == @user.id %> 
+        <a href="/surveys/<%=elem.id%>"><%= elem.name %></a><br>
       <% end %>
     <% end %>
    <% end %>
-  </div>
+ </div>
 
 
 </div>

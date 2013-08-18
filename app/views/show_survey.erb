@@ -5,7 +5,7 @@
     <form action="/answers" method="post">
       <!-- When submitted, form should post '/answers' and save answers to Answers table in the DB -->
       <%@survey.questions.each do |question| %>
-        <%=question.prompt  %>
+        <div class="prompt"><%=question.prompt  %></div>
         <br>
          <% question.choices.each do |choice| %>
             <input type="radio" name="<%=question.id %>" value="<%=choice.id%>"> <%= choice.content %>

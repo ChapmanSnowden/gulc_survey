@@ -1,17 +1,20 @@
 get '/' do
   @errors = session.delete(:error_message) || []
-  @user = User.find(session[:user_id])
+  @user = User.find(session[:user_id]) if session[:user_id]
+  @all_surveys = Survey.all || []
+
   if @user
+    @unanswered_surveys = (@all_surveys - Survey.where(:id => @user.completed_surveys.map(&:survey_id)))
     erb :dashboard
   else
     erb :index
   end
+
 end
 
 post '/create' do
   if taken?(params[:email])
     session[:error_message] = ["That email address has already been registered."]
-    redirect '/'
   else
     @user = User.new(name: params[:name], email: params[:email])
     @user.password = params[:password]
@@ -19,26 +22,20 @@ post '/create' do
 
     session[:user_id] = @user.id
 
-    @all_surveys = Survey.all
-
-    erb :dashboard
   end
+
+  redirect '/'
 end
 
 post '/login' do
-  @user = User.authenticate(params[:email], params[:password])
-  @all_surveys = Survey.all
+  user = User.authenticate(params[:email], params[:password])
+  session[:user_id] = user.id if user   
 
-  if @user   
-    session[:user_id] = @user.id
-    erb :dashboard
-  else
-    redirect '/'
-  end
-
+  redirect '/'
 end
 
 get '/logout' do 
   session.clear
+
   redirect '/'
 end
