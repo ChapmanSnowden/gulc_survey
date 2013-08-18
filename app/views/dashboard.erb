@@ -7,7 +7,7 @@
     <h3><strong><em>?uest</em></strong> for the Crowd</h3>
     <% if @user.surveys %>
     <% @user.surveys.each do |survey| %>
-    <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
+    <a href="/surveys/<%=survey.id%>/results"><%= survey.name %></a><br>
     <% end %>
     <% end %>
     <button type="button" class="btn btn-info"><a href="/surveys/new">Create New Survey</a></button>
