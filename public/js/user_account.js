@@ -1,14 +1,13 @@
 $(document).ready(function() {
 
-$('#create_form').on('submit', function(event) {
-    
+$('.jumbotron form').on('submit', function(event) {
+    console.log('hi');
     $('#errors li').remove();
 
      var errors = []
 
      var password = $('#exampleInputPassword1').val();
-     
-    
+         
     if ( (/[\d]/).test(password) === false) {
       $('#errors').append("<li> Password must have at least 1 numeric character </li>");
       errors.push("No numbers");
