@@ -2,8 +2,8 @@ get '/' do
   @errors = session.delete(:error_message) || []
   @user = User.find(session[:user_id]) if session[:user_id]
   @all_surveys = Survey.all || []
-  @unanswered_surveys = (@all_surveys - Survey.where(:id => @user.completed_surveys.map(&:survey_id)))
   if @user
+    @unanswered_surveys = (@all_surveys - Survey.where(:id => @user.completed_surveys.map(&:survey_id)))
     erb :dashboard
   else
     erb :index
