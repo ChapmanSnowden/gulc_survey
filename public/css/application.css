@@ -85,6 +85,10 @@ img{
   border-radius: 10px;
 }
 
+#results {
+  color: blue;
+}
+
 /*
  * Bootstrap Documentation
  * Special styles for presenting Bootstrap's documentation and code examples.
