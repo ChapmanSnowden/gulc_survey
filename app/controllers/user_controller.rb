@@ -1,6 +1,10 @@
 get '/' do
   @errors = session.delete(:error_message) || []
-  erb :index
+  if session[:user_id]
+    erb :dashboard
+  else
+    erb :index
+  end
 end
 
 post '/create' do
