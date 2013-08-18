@@ -26,11 +26,13 @@
   <div class="col-md-3" >
    <h3><strong><em>?uest</em></strong> You Can Answer</h3>
   
+   <% if @all_surveys %>
     <% @all_surveys.each do |survey| %>
       <% unless survey.user_id == @user.id %>
         <a href="/surveys/<%=survey.id%>"><%= survey.name %></a><br>
       <% end %>
     <% end %>
+   <% end %>
   </div>
 
 
