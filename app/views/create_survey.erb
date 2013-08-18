@@ -1,10 +1,12 @@
-<div class="container">
+<div class="container" >
   <h1> Create Survey </h1> 
 
   <form id="create_survey" name="create_survey" action="/surveys" method="post">
     <span> Survey Name: <input name="name" type="text"></span>
     <span><input id="save_survey" type="submit" value="Create Survey"></span>
   </form><br>
-
-  <a id="done" href="/dashboard"><button>I'm Done!</button></a>
+  
+  <div class="col-md-6">
+    <a id="done" href="/dashboard"><button id="btn_im_done" type="button" class="btn btn-success">I'm Done!</button></a><br>
+  </div>
 </div>
