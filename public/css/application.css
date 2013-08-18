@@ -42,11 +42,13 @@ th {
 
 .col-md-3 {
   width: 30%;
-  background-color: white;
+  background-color: none;
+  opacity: .9;
   border: 7px solid gray;
   border-radius: 10px;
   margin: 10px;
   padding: 10px;
+  text-align: center;
 
 }
 
@@ -120,11 +122,16 @@ th {
 #create_survey {
   margin: 0 auto;
   width: 70%;
-  background-color: white;
+  background-color: none;
+  opacity: .9;
   border: 7px solid gray;
   border-radius: 10px;
   padding: 10px;
   margin-top: 30px;
+}
+
+.btn_btn-default_btn {
+  width:75px; 
 }
 
 .question_partial {

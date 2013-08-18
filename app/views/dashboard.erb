@@ -1,36 +1,38 @@
 <div class="container">
 
-  <h1><strong><em>?uest</em></strong> Dashboard</h1>
+  <h1><%=@user.name %>'s<strong><em> ?uest</em></strong>board</h1>
 
   
   <div class="col-md-3" >
-    <h3><strong><em>?uest</em></strong> for the Crowd</h3>
+    <h3>Your <strong><em>?uests</em></strong> for the Crowd</h3>
     <% if @user.surveys %>
     <% @user.surveys.each do |survey| %>
-    <a href="/surveys/<%=survey.id%>/results"><%= survey.name %></a><br>
+      <button type="button" class="btn btn-default btn"><a href="/surveys/<%=survey.id%>/results"><%= survey.name %></a><br></button>
+      <% end %>
     <% end %>
-    <% end %>
-    <button type="button" class="btn btn-info"><a href="/surveys/new">Create New Survey</a></button>
+    <br>
+    <br>
+    <p><button type="button" class="btn btn-info"><a href="/surveys/new">Create New Survey</a></button></p>
 
   </div>
 
   <div class="col-md-3" >
-   <h3><strong><em>?uest</em></strong> You've Answered</h3>
+   <h3><strong><em>?uests</em></strong> You Answered</h3>
    <% if @user.completed_surveys %>
    <% @user.completed_surveys.each do |elem| %>
-   <a href="/surveys/<%=elem.survey_id%>/results"><%= elem.survey.name %></a><br>
-   <% end %>
+      <button type="button" class="btn btn-default btn"><a href="/surveys/<%=elem.survey_id%>/results"><%= elem.survey.name %></a><br></button>
+      <% end %>
    <% end %>
  </div>
 
 
  <div class="col-md-3" >
-   <h3><strong><em>?uest</em></strong> You Can Answer</h3>
+   <h3><strong><em>?uests</em></strong> You Can Answer</h3>
 
    <% if @unanswered_surveys %>
     <% @unanswered_surveys.each do |elem| %>
       <% unless elem.user_id == @user.id %> 
-        <a href="/surveys/<%=elem.id%>"><%= elem.name %></a><br>
+        <button type="button" class="btn btn-default btn"><a href="/surveys/<%=elem.id%>"><%= elem.name %></a><br></button>
       <% end %>
     <% end %>
    <% end %>
