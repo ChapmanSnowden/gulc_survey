@@ -7,7 +7,7 @@ post '/answers' do
   
   CompletedSurvey.create(user_id: session[:user_id], survey_id: @answer.question.survey.id)
   
-  redirect '/dashboard'
+  redirect '/'
 end
 
 get '/surveys/:id/results' do |id|

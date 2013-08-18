@@ -1,7 +1,8 @@
 get '/' do
   @errors = session.delete(:error_message) || []
   @user = User.find(session[:user_id]) if session[:user_id]
-  @all_surveys = Survey.all
+  @all_surveys = Survey.all || []
+  @unanswered_surveys = (@all_surveys - Survey.where(:id => @user.completed_surveys.map(&:survey_id)))
   if @user
     erb :dashboard
   else
@@ -20,15 +21,15 @@ post '/create' do
 
     session[:user_id] = @user.id
 
-    @all_surveys = Survey.all
-
     redirect '/'
   end
 end
 
 post '/login' do
   user = User.authenticate(params[:email], params[:password])
-
+  puts params[:email]
+  puts params[:password]
+  puts User.authenticate(params[:email], params[:password])
   if user   
     session[:user_id] = user.id
     redirect '/'
