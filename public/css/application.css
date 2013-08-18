@@ -104,9 +104,6 @@ th {
   border-radius: 10px;
 }
 
-
-
-
 #create_survey {
   margin: 0 auto;
   width: 70%;
@@ -118,7 +115,17 @@ th {
 }
 
 #results {
-  color: blue;
+  height: 20px; 
+  display: inline-block; 
+}
+
+#results_container {
+  width: 80%;
+}
+
+.prompt {
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
 /*

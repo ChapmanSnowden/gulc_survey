@@ -1,16 +1,21 @@
 <h1>Survey Results</h1>
 
-<h3><em>Completed by</em> <%=@num_takers%> <em>?uesters</em></h3> 
+<div id="results_container">
+<h4><em>Total number of ?uesters surveyed:</em> <%=@num_takers%> </h4> 
 
 <ul>
   <%@questions.each do |question|%>
-    <li><%=question.prompt%></li>
+    <li class="prompt"><%=question.prompt%></li>
     <ul>
       <%question.choices.each do |choice|%>
-        <li><%=choice.content%>: <span id="results"><%=(100 * choice.votes.to_f/@num_takers).round(1)%>%</span></li>
-      <%end%>
+        <% percentage = (100 * choice.votes.to_f/@num_takers).round(1) %> 
+        <% color = '#' + '%06x' % (rand * 0xffffff) %>
+        <li><%=choice.content%>:<br> 
+        <div id="results" style="background-color: <%= color %>; width: <%=percentage%>%"></div>
+        <span> <%=percentage%>%</span></li>
+      <%end%><br>
     </ul>
   <%end%>
 </ul>
-
+</div>
 
