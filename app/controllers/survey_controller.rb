@@ -1,4 +1,6 @@
 get '/surveys/new' do
+  #CODE REVIEW: Create a current user helper  call it from a before filter
+
   @user = session[:user_id] if session[:user_id]
   erb :create_survey
 end

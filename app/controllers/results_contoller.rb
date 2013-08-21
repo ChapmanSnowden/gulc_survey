@@ -11,6 +11,8 @@ post '/answers' do
 end
 
 get '/surveys/:id/results' do |id|
+   # CODE REVIEW: Create a helper for current user
+
   @user = User.find(session[:user_id])
   if session[:user_id]
     @survey = Survey.find(id)
