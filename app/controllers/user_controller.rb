@@ -1,3 +1,5 @@
+#CODE REVIEW: Use restful routes.
+
 get '/' do
   @errors = session.delete(:error_message) || []
   @user = User.find(session[:user_id]) if session[:user_id]
@@ -13,6 +15,8 @@ get '/' do
 end
 
 post '/create' do
+  #CODE REVIEW : Move validation to the model.  Why are you storing error messages in a session? They are available on the model. 
+
   if taken?(params[:email])
     session[:error_message] = ["That email address has already been registered."]
   else
@@ -28,6 +32,8 @@ post '/create' do
 end
 
 post '/login' do
+  #CODE REVIEW: Create a login helper method
+  
   user = User.authenticate(params[:email], params[:password])
   session[:user_id] = user.id if user   
 
