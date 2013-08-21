@@ -1,3 +1,5 @@
+// CODE REVIEW: Use OOJS - create a Validator class with an error attribute and validation emails for various fields. 
+
 $(document).ready(function() {
 
 $('.jumbotron form').on('submit', function(event) {

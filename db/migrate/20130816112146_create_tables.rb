@@ -1,3 +1,5 @@
+# CODE REVIEW: Create SEPARATE migrations for each table so it is easier to isolate
+
 class CreateTables < ActiveRecord::Migration
   def change 
     create_table :users do |t|

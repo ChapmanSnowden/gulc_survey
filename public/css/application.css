@@ -1,3 +1,10 @@
+/*CODE REVIEW: 
+
+1. Keep bootstrap CSS separate from yours - don't modify bootstrap css
+2. Organize CSS either by feature or alphabetically
+3. Refactor CSS to move common colors to a single style rule
+*/
+
 /*.container {
   margin: 20px auto;
   width: 600px;
