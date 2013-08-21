@@ -1,6 +1,8 @@
 $(document).ready(function() {
   
   js_helper('#create_survey', '#save_survey');
+  js_helper('.add_question', '.add_q');
+
   // function survey_creator (){
     // var survey_id = '#create_survey';
     // var hide_button = '#save_survey';
@@ -24,20 +26,20 @@ $(document).ready(function() {
 
 
     
-  $('.add_question').on('submit', function(e) {
-    e.preventDefault();
-    var question_data = $(this).serialize();
-    var question_creation = $.ajax({
-      type: this.method,
-      url: this.action,
-      data: question_data
-    });
+  // $('.add_question').on('submit', function(e) {
+  //   e.preventDefault();
+  //   var question_data = $(this).serialize();
+  //   var question_creation = $.ajax({
+  //     type: this.method,
+  //     url: this.action,
+  //     data: question_data
+  //   });
 
-    question_creation.done(function(response) {
-      $('.add_q').hide();
-      $('.container').append(response);
-    });
-  });
+  //   question_creation.done(function(response) {
+  //     $('.add_q').hide();
+  //     $('.container').append(response);
+  //   });
+  // });
 
   $('.add_choice').on('submit', function(e) {
     e.preventDefault();
