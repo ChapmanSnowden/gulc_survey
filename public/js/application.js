@@ -1,20 +1,29 @@
 $(document).ready(function() {
+  
+  js_helper('#create_survey', '#save_survey');
+  // function survey_creator (){
+    // var survey_id = '#create_survey';
+    // var hide_button = '#save_survey';
+    // js_helper(survey_id, hide_button);
+  // }
 
-  $('#create_survey').on('submit', function(e) {
-    e.preventDefault();
-    var survey_name = $(this).serialize();
-    var survey_creation = $.ajax({
-      type: this.method,
-      url: this.action,
-      data: survey_name
-    });
+  // $('#create_survey').on('submit', function(e) {
+  //   e.preventDefault();
+  //   var survey_name = $(this).serialize();
+  //   var survey_creation = $.ajax({
+  //     type: this.method,
+  //     url: this.action,
+  //     data: survey_name
+  //   });
 
-    survey_creation.done(function(response) {
-      $('#save_survey').hide();
-      $('.container').append(response);
-    });
-  });
+  //   survey_creation.done(function(response) {
+  //     $('#save_survey').hide();
+  //     $('.container').append(response);
+  //   });
+  // });
 
+
+    
   $('.add_question').on('submit', function(e) {
     e.preventDefault();
     var question_data = $(this).serialize();
