@@ -1,3 +1,10 @@
+/*CODE REVIEW: 
+
+1. Keep bootstrap CSS separate from yours - don't modify bootstrap css
+2. Organize CSS either by feature or alphabetically
+3. Refactor CSS to move common colors to a single style rule
+*/
+
 /*.container {
   margin: 20px auto;
   width: 600px;
@@ -24,7 +31,8 @@ th {
 }
 
 .navbar {
-  background-color: black;
+  background-color: #303030;
+  background-gradient:;
 }
 
 #create_account {
@@ -156,8 +164,9 @@ th {
   margin-top: 30px;
 }
 
-.btn_btn-default_btn {
-  width:75px; 
+.btn-default {
+ /* width:75px;*/
+  margin: .2em;
 }
 
 .question_partial {
