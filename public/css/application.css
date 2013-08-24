@@ -87,6 +87,9 @@ th {
 #btn_im_done {
 
   margin: 0 auto;
+/*  position: fixed;
+  bottom: 200px;
+  right: 400px;*/
 
 }
 
@@ -191,7 +194,6 @@ th {
   font-weight: bold;
   font-size: 1.2em;
 }
-
 
 
 /*

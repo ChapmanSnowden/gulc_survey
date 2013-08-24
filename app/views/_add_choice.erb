@@ -1,17 +1,16 @@
- <div class="row">
+<div class="row">
   <div class="col-md-offset-3" >
-  <form class="add_choice" action="/surveys/<%= @survey_id %>/questions/<%= @question_id %>/choices" method="post">
+    
+    <form class="add_choice" action="/surveys/<%= @survey_id %>/questions/<%= @question_id %>/choices" method="post">
 
-    <span>Choice: <input name ="choice" type="text"></span>
-    <br><br><span class="another_choice"><button type="submit" class="btn btn-primary btn-xs">Add Choice</button>
-     <!--  <input class="add_c" type="submit" value="Add Choice"> --></span>
+      <div>Choice: <input name ="choice" type="text"></div><br>
+      <div class="another_choice"><button type="submit" class="btn btn-primary btn-xs add_c">Add Choice</button></div>
 
-  </form>
-  <br>
+    </form><br>
 
-  <form class ="another_q" action="/surveys/<%= @survey_id %>/another_q" method="post">
-    <button class="btn btn-primary btn" class="q_button">Add Another Question</button>
-  </form>
-  <br>
-</div>
+    <form class ="another_q" action="/surveys/<%= @survey_id %>/another_q" method="post">
+      <button class="btn btn-primary btn q_button">Add Another Question</button>
+    </form>
+
+  </div>
 </div>

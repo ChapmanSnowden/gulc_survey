@@ -40,7 +40,7 @@ $(document).ready(function() {
     });
 
     choice_creation.done(function(response) {
-      $('.q_button').remove();
+      $('q_button').remove();
       $('.add_c').hide();
       $('.container').append(response);
     });
