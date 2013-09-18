@@ -8,41 +8,32 @@
   </form>
   <br>
 
-  <div id="show_question">
+  <div id="survey_container">
 
-  </div>
-
-  <div class="row" id="add_question" style="display: none;">
-  
-  <form class="add_question" action="/surveys/<%= @survey_id %>/questions" method="post">
-    <span>Question: <input name ="prompt" type="text"></span>
-    <span class="add_q"><button type="submit" class="btn btn-primary btn" id="first_question">Add Question</button></span>
-  </form>
-
-  <br>
-  </div>
-
-  <div id="show_choice">
-
-  </div>
-  
-  <div class="row" id="add_choice" style="display: none;">
-  <div class="col-md-offset-3" >
+    <div class="row" id="add_question" style="display: none;">
+      <form class="add_question" action="/surveys/<%= @survey_id %>/questions" method="post">
+        <span>Question: <input name ="prompt" type="text"></span>
+        <span class="add_q"><button type="submit" class="btn btn-primary btn" id="first_question">Add Question</button></span>
+      </form>
+      <br>
+    </div>
     
-    <form class="add_choice" action="/surveys/<%= @survey_id %>/questions/<%= @question_id %>/choices" method="post">
- 
-      <div>Choice: <input name ="choice" type="text"></div><br>
-      <div class="another_choice"><button type="submit" class="btn btn-primary btn-xs add_c">Add Choice</button></div>
- 
-    </form><br>
- 
-    <form class ="another_q" action="/surveys/<%= @survey_id %>/another_q" method="post">
-      <button class="btn btn-primary btn q_button">Add Another Question</button>
-    </form>
- 
+    <div class="row" id="add_choice" style="display: none;">
+      <div class="col-md-offset-3" >
+        
+        <form class="add_choice" action="/surveys/<%= @survey_id %>/questions/<%= @question_id %>/choices" method="post">
+     
+          <div>Choice: <input name ="choice" type="text"></div><br>
+          <div class="another_choice"><button type="submit" class="btn btn-primary btn-xs add_c">Add Choice</button></div>
+     
+        </form><br>
+     
+        <form class ="another_q" action="/surveys/<%= @survey_id %>/another_q" method="post">
+          <button class="btn btn-primary btn q_button">Add Another Question</button>
+        </form>
+      </div>
+    </div>
   </div>
-</div>
-
 
   <div class="col-md-6">
     <a id="done" href="/"><button id="btn_im_done" type="button" class="btn btn-success">I'm Done!</button></a><br>

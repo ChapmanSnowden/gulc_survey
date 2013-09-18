@@ -1,5 +1,6 @@
 function js_helper(id, button, question_button, choice_button ) {
-  $(id).on('submit', function(e) {
+  $(id).submit(function(e) {
+    console.log('submitted');
     e.preventDefault();
     var data = $(this).serialize();
     var creation = $.ajax({
@@ -12,7 +13,7 @@ function js_helper(id, button, question_button, choice_button ) {
       $(question_button).remove();
       $(choice_button).remove();
       $(button).hide();
-      $('.container').append(response);
+      $('#survey_container').append(response);
     });
   });
 }
