@@ -1,7 +1,7 @@
 gulc_survey
 ===========
 
-Given extra time, we would have liked to implement:
+
 
 - Under create survey view, show each question created and its coresponding choices in a single box.
 
